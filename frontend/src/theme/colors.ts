@@ -13,4 +13,6 @@ export const colors = {
     background_custom: "#262a34",
     header_home_color: "#373636",
     color_Button: "#CDCDCC",
+    description:"#736B66",
+    marron:"#4F3422"
   };
