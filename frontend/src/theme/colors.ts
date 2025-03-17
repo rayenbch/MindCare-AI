@@ -14,5 +14,7 @@ export const colors = {
     header_home_color: "#373636",
     color_Button: "#CDCDCC",
     description:"#736B66",
-    marron:"#4F3422"
+    marron:"#4F3422",
+    orange:"#ED7E1C",
+    green:"#9BB168",
   };

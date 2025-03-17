@@ -3,8 +3,19 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import {images} from '../../theme/images'; // Importer le thème
 import { fonts } from '../../theme/fonts'; // Importer le thème
 import { colors } from '@/src/theme';
+import BottomTabNavigation from '@/src/navigation/bottomTabNavigation';
 
 export default function HomeScreen() {
+  const handleGetStarted = () => {
+    // Ajoutez ici la logique pour le bouton "Get Started"
+    console.log('Get Started pressed');
+  };
+  const handleSignIn = () => {
+    console.log('Sign In pressed');
+    // Ajoutez ici la logique pour le lien "Sign In"
+    // Exemple : navigation.navigate('SignIn');
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -14,11 +25,12 @@ export default function HomeScreen() {
         <Text style={styles.description}>Your mindful mental health AI companion for everyone, anywhere 🍃</Text>
       </View>
       <Image source={images.atmo} style={styles.illustration} />
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Get Started →</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.signInLink}>
-        <Text style={styles.signInText}>Already have an account? Sign In.</Text>
+      <BottomTabNavigation title="Get Started →" onPress={handleGetStarted} />
+      <TouchableOpacity style={styles.signInLink} onPress={handleSignIn}>
+        <Text style={styles.description}>
+          Already have an account?{' '}
+          <Text style={styles.signInText}>Sign In.</Text>
+        </Text>
       </TouchableOpacity>
     </View>
   );
@@ -78,7 +90,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   signInText: {
-    color: '#007AFF',
+    color: colors.orange,
     fontSize: 16,
   },
 });
