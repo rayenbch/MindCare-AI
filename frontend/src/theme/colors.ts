@@ -17,4 +17,12 @@ export const colors = {
     marron:"#4F3422",
     orange:"#ED7E1C",
     green:"#9BB168",
+     personalizeBackground : '#F0F0F0', // Couleur de fond de l'écran
+ stepBackground : '#E0E0E0', // Couleur de fond du "Step One"
+ stepText : '#333333', // Couleur du texte "Step One"
+ progressBarBackground : '#D0D0D0', // Couleur de fond de la barre de progression
+ progressBarFill : '#007AFF', // Couleur de remplissage de la barre de progression
+ arrowButtonBackground : '#007AFF', // Couleur de fond du bouton flèche
+ arrowButtonText : '#FFFFFF', // Couleur du texte de la flèche
+ bottomBar : '#C0C0C0', // Couleur de la barre inférieure
   };
