@@ -1,10 +1,16 @@
 
 // app/index.tsx
 import React from 'react';
-import WelcomeScreen2 from '../src/screens/welcomeScreen/welcomeScreen2';
-import LoadingScreen4 from '../src/screens/Splash&loading/loadingScreen4';
+import WelcomeScreen from '../src/screens/WelcomeScreen/WelcomeScreen1';
+import { NavigationContainer } from '@react-navigation/native';
+import WelcomeStackNavigation from '@/src/navigation/WelcomeStackNavigation';
+
 
 
 export default function Index() {
-  return  <WelcomeScreen2 />;
+  return  (
+    <NavigationContainer>
+      <WelcomeStackNavigation />
+    </NavigationContainer> 
+  );
 }

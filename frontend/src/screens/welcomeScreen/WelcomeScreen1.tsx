@@ -1,21 +1,24 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import {images} from '../../theme/images'; // Importer le thème
-import { fonts } from '../../theme/fonts'; // Importer le thème
+import { images } from '../../theme/images';
+import { fonts } from '../../theme/fonts';
 import { colors } from '@/src/theme';
-import BottomTabNavigation from '@/src/navigation/bottomTabNavigation';
+import ButtonPrimary from '@/src/components/ButtonPrimery';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { rootNavigation } from '@/src/navigation/RootNavigation';
+import ScreenName from '@/src/constants/ScreenName';
 
-export default function HomeScreen() {
-  const handleGetStarted = () => {
-    // Ajoutez ici la logique pour le bouton "Get Started"
-    console.log('Get Started pressed');
-  };
+
+type Props = NativeStackScreenProps<rootNavigation , ScreenName>
+export default function WelcomeScreen1({route, navigation }:Props) {
   const handleSignIn = () => {
     console.log('Sign In pressed');
-    // Ajoutez ici la logique pour le lien "Sign In"
-    // Exemple : navigation.navigate('SignIn');
   };
 
+  const WelcomeScreenPressed = () => {
+    navigation.navigate(ScreenName.WelcomeScreen2,{
+      title:"Welcome Screen 2",
+    });}
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -25,17 +28,19 @@ export default function HomeScreen() {
         <Text style={styles.description}>Your mindful mental health AI companion for everyone, anywhere 🍃</Text>
       </View>
       <Image source={images.atmo} style={styles.illustration} />
-      <BottomTabNavigation title="Get Started →" onPress={handleGetStarted} />
+      <ButtonPrimary
+        title="Get Started →"
+        onPress={WelcomeScreenPressed}
+      />
       <TouchableOpacity style={styles.signInLink} onPress={handleSignIn}>
         <Text style={styles.description}>
-          Already have an account?{' '}
-          <Text style={styles.signInText}>Sign In.</Text>
+          Already have an account? <Text style={styles.signInText}>Sign In.</Text>
         </Text>
       </TouchableOpacity>
     </View>
   );
-
 }
+
 
 const styles = StyleSheet.create({
   container: {

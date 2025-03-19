@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { images } from '../../theme/images';
 import { colors } from '@/src/theme';
 
-export default function PersonalizeScreen() {
+export default function WelcomeScreen2() {
   return (
     <View style={styles.container}>
       <View style={styles.stepContainer}>
